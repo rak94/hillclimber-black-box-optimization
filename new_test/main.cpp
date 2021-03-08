@@ -23,7 +23,7 @@ int main(){
     pj[index] = 0;
   }
   fit = eval(pj);
-  cout << "Initail Fitness = " << fit << endl;
+  cout << "Initial Fitness = " << fit << endl;
   index=0;
   do{
     modify(pj, index);
