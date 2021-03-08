@@ -23,7 +23,7 @@ int main(){
     pj[index] = 0;
   }
   fit = eval(pj);
-  cout << "starting fitness = " << fit << endl;
+  cout << "Initail Fitness = " << fit << endl;
   index=0;
   do{
     modify(pj, index);
@@ -44,7 +44,7 @@ int main(){
   }
   while(index != p_index);
   //output solution vector
-  cout << "fitness = " << fit << endl;
+  cout << "Best Fitness = " << fit << endl;
   cout << "Vector: ";  
   for(index = 0; index < size-1; index++){
     cout << pj[index] << ",";
