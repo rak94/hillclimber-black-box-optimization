@@ -2,67 +2,54 @@
 
 using namespace std;
 
-double eval (int *key);
-void modify (int *key,int index);
+double eval (int *pj);
+void modify (int *pj, int index);
 
 //main hillclimber function
-int main()
-{
-  int size = 100;//size of key
-  int key[size];//current best solution
-  double fit = 0;//current fitness
-  double nfit = 0;//new fitness
-  int index = 0;//position in string
-  int pindex = 0;
+int main(){
+  int size = 100; //size of pj
+  int pj[size]; //current best solution
+  double fit = 0; //current fitness
+  double new_fit = 0; //new fitness
+  int index = 0; //position in string
+  int p_index = 0;
 
-  for(index = 0; index < size; index++)
-  {
-    key[index] = 0;
+  for(index = 0; index < size; index++){
+    pj[index] = 0;
   }
-  
-  fit = eval(key);
+  fit = eval(pj);
   cout << "starting fitness = " << fit << endl;
-  
   index=0;
-  do
-  {
-    modify(key,index);
-    
-    nfit = eval(key);
-    
-    if(nfit>fit)//keep new solution if it's better
-    {
-      fit = nfit;
-      pindex = index;
+  do{
+    modify(pj, index);
+    new_fit = eval(pj);
+    //keep new solution if it's better
+    if(new_fit > fit){
+      fit = new_fit;
+      p_index = index;
     }
-    else//else return to old solution and move on
-    {
-      modify(key,index);
+    //else return to old solution and move on
+    else{
+      modify(pj, index);
     }
-    
     index++;
-    if(index > size-1)
-    {
+    if(index > size-1){
       index = 0;
     }
-    
-  }while(index != pindex);
-  
+  }
+  while(index != p_index);
   //output solution vector
   cout << "fitness = " << fit << endl;
   cout << "Vector: ";  
-  for(index = 0; index < size-1; index++)
-  {
-    cout << key[index] << ",";
+  for(index = 0; index < size-1; index++){
+    cout << pj[index] << ",";
   }
   index = size-1;
-  cout << key[index] << endl;
-  
+  cout << pj[index] << endl;
   return 0;
 }
 
 //function swaps value at index for new candidate solution
-void modify (int *key,int index)
-{
-  key[index] = 1-key[index];
+void modify (int *pj, int index){
+  pj[index] = 1-pj[index];
 }
