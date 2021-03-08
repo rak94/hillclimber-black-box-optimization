@@ -1,3 +1,8 @@
+// Student Name - Rakshith Kothanur Harish
+// Email - rak94@live.missouristate.edu
+// Instructor - Dr. Siming Liu
+// Problem - Hill Climber Black Box Optimization
+
 double eval(int *pj){
   int sum = 0;
   int count = 0;
