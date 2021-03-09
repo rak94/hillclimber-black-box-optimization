@@ -7,19 +7,19 @@ double eval(int *pj){
   int sum = 0;
   int count = 0;
   
-  for(count = 0; count < 33; count++){
+  for(count = 0; count < 25; count++){
     if(pj[count] > 0){
       sum++;
     }
   }
   
-  for(count = 33; count < 36; count++){
+  for(count = 25; count < 70; count++){
     if(pj[count] < 1){
       sum++;
     }
   }
   
-  for(count = 36; count < 70; count++){
+  for(count = 70; count < 76; count++){
     if(pj[count] > 0){
       sum++;
     }
@@ -29,7 +29,7 @@ double eval(int *pj){
     sum += 2;
   }
   
-  for(count = 72;count < 100;count++){
+  for(count = 76;count < 100;count++){
     if(pj[count] < 1){
       sum++;
     }
